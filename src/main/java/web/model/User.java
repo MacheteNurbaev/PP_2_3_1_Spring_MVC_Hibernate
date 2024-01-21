@@ -16,14 +16,23 @@ import javax.persistence.Table;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name = "lastName")
     private String lastName;
+
+    public User(String name, String lastName) {
+        this.name = name;
+        this.lastName = lastName;
+    }
+
+    public User () {
+
+    }
 
     public Long getId() {
         return id;
